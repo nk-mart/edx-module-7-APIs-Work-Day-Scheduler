@@ -7,9 +7,10 @@
 
 
 
-Day Planner buuilt with MomentJS, HTML, JS, CSS
+Day Planner built with MomentJS, HTML, JS, CSS.
+
 
 
 
 ## Know Issues
-- local srogae rtrival does not work on Chrome normal tab (Work Around: Use Private a Private TAB)
+- local storage retrieval does not work on Chrome normal tab (Work Around: Use Private a Private TAB)
