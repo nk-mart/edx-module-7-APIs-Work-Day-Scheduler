@@ -73,7 +73,7 @@ function myFunction(){
 //loops through localstrage and set textarea value if an entry exist 
 Object.keys(localStorage).forEach(e => {
    
-    if(e=!){
+    if(e != null ){
     document.querySelector(`[data-time="${e}"]`).value=`${localStorage[e]}`
     }
 });
