@@ -26,18 +26,23 @@ let timeSlotAvailability = function  timeSlotAvailability(arg){
     }
 };
 
+
+
+
+
+
 // Dynamic Render Time Slots 
 workspace.innerHTML= workHrs.map((hours) =>{
     
-     
 
+   return `
    
-   return `<div id="timeBlock-" class="input-group timeblck ">
+    <div id="timeBlock" class="input-group timeblck">
    <div class="input-group-prepend">
      <span class="input-group-text mt-1"> Time: ${hours}</span>
    </div>
-   <textarea data-time=${hours} class="form-control ${timeSlotAvailability(hours)} mt-1" aria-label="With textarea"></textarea>
-   <button class="btn btn-outline-secondary btn-sm saveBtn mt-1" type="button">
+   <textarea data-time=${hours} class="form-control ${timeSlotAvailability(hours)} mt-1 abc ${hours}" aria-label="With textarea"></textarea>
+   <button class="btn btn-outline-secondary btn-sm saveBtn mt-1 " onclick="myFunction()" type="button">
      🔒 Book
    </button>
  </div>`
@@ -48,15 +53,30 @@ workspace.innerHTML= workHrs.map((hours) =>{
 
 
 
+//  let texf = document.querySelector("textarea")
+
+
+function myFunction(){
+
+   
+    
+  //Set localstorage to the button sibling textarea vale
+    localStorage.setItem(event.target.previousElementSibling.dataset.time, event.target.previousElementSibling.value )
+
+    // console.log(event.target.previousElementSibling.dataset.time)
+}
 
 
 
-// function  timeSlotAvailability(){
 
-//     if (hours) {
-        
-//     } else {
-        
-//     }
 
-// }
+//loops through localstrage and set textarea value if an entry exist 
+Object.keys(localStorage).forEach(e => {
+    console.log(e)
+
+
+    // 
+    document.querySelector(`[data-time="${e}"]`).value=`${localStorage[e]}`
+
+
+});
